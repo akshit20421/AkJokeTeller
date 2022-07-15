@@ -1,5 +1,8 @@
 
-// VoiceRSS Javascript SDK
+// VoiceRSS Javascript SDK;
+
+
+
 
 const button=document.getElementById('button');
 const audioElement= document.getElementById('audio');
@@ -53,3 +56,30 @@ async function getJokes(){
 }
 button.addEventListener('click',getJokes);
 audioElement.addEventListener('ended',toggleButton);
+
+
+
+
+if (annyang) {
+  // Let's define our first command. First the text we expect, and then the function it should call
+  if (annyang) {
+  // Let's define a command.
+  const commands = {
+    'robo my name is *tag': (variable) => {
+var ss=document.querySelector(".hh5");
+ss.textContent="Hi!! "+variable;
+},
+'please feed my name *tag': (variable) => {
+var ss=document.querySelector(".hh5");
+ss.textContent="Welcome!! "+variable;
+}
+
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening.
+  annyang.start();
+}
+}
